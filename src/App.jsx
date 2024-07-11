@@ -5,6 +5,10 @@ import Navbar from './Components/Navbar';
 import HeroSection from './Components/HeroSection';
 import Articals from './Components/Articals';
 import Footer from './Components/Footer';
+import About from './Pages/About';
+import ContactUs from './Pages/ContactUs';
+import Publication from './Pages/Publication';
+import Services from './Pages/Services';
 
 function App() {
   return (
@@ -18,12 +22,16 @@ function App() {
             <>
               <HeroSection />
               <Articals />
-              <Footer />
+             
             </>
           }
         />
-        <Route path="/about" element={<div>About Us Page</div>} /> {/* Replace with your About component */}
+        <Route path="/about" element={<About/>} /> 
+        <Route path="/contact" element={<ContactUs/>} /> 
+        <Route path="/publication" element={<Publication/>} /> 
+        <Route path="/services" element={<Services/>} /> 
       </Routes>
+      <Footer />
     </>
   );
 }

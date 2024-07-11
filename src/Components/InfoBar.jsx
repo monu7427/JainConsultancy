@@ -12,10 +12,10 @@ function InfoBar() {
       <div className="flex items-center space-x-2">
       <div className="flex items-center space-x-2 mr-3">
             <FontAwesomeIcon icon={faPhone} />
-            <span>+91 7737263901</span>
+            <span>+91 9414646365 </span>
           </div>
         <FontAwesomeIcon icon={faEnvelope} />
-        <a href="mailto:info@akgvg.com" className="underline">info@akgvg.com</a>
+        <a href="mailto:info@akgvg.com" className="underline">jain.consultancy92@gmail.com</a>
       </div>
     </div>
   );

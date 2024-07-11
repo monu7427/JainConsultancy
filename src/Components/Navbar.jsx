@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 const Navbar = () => {
@@ -36,29 +37,25 @@ const Navbar = () => {
           className={`md:flex space-x-4 ${isMobileMenuOpen ? 'block' : 'hidden'} md:block w-full md:w-auto`}
         >
           <li>
-            <a href="#" className="hover:underline block md:inline">
+            <NavLink exact to="/" className="hover:underline block md:inline" activeClassName="font-bold">
               Home
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="#" className="hover:underline block md:inline">
+            <NavLink to="/about" className="hover:underline block md:inline" activeClassName="font-bold">
               About Us
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="#" className="hover:underline block md:inline">
+            <NavLink to="/services" className="hover:underline block md:inline" activeClassName="font-bold">
               Services
-            </a>
+            </NavLink>
           </li>
+          
           <li>
-            <a href="#" className="hover:underline block md:inline">
-              Publication
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:underline block md:inline">
+            <NavLink to="/contact" className="hover:underline block md:inline" activeClassName="font-bold">
               Contact Us
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>

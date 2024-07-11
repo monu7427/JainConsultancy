@@ -6,11 +6,11 @@ const Footer = () => {
       <div className="absolute inset-0 bg-slate-900"></div>
       <div className="container mx-auto relative py-8">
         <div className="flex flex-col items-center">
-          <h2 className="text-lg font-semibold text-white mb-4">Contact Us</h2>
+          <h2 className="text-xl font-semibold text-white mb-4">Jain Consultancy</h2>
           <div className="text-center mb-4">
-            <p className="text-slate-400">123 Street Name, City, Country</p>
-            <p className="text-slate-400">Phone: +123 456 789</p>
-            <p className="text-slate-400">Email: info@example.com</p>
+            <p className="text-slate-400">Sanghpura Purani tonk , Tonk Rajasthan 304001</p>
+            <p className="text-slate-400">Phone: +91 9414646365</p>
+            <p className="text-slate-400">Email: jain.consultancy92@gmail.com</p>
           </div>
           <p className="text-white text-center mb-4 max-w-prose">We are committed to providing our clients with the best quality services in the market.</p>
           <div className="flex space-x-4">
