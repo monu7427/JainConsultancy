@@ -9,6 +9,10 @@ import About from './Pages/About';
 import ContactUs from './Pages/ContactUs';
 import Publication from './Pages/Publication';
 import Services from './Pages/Services';
+import TermsCondition from './Pages/TermsCondition';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
+
+
 
 function App() {
   return (
@@ -30,6 +34,8 @@ function App() {
         <Route path="/contact" element={<ContactUs/>} /> 
         <Route path="/publication" element={<Publication/>} /> 
         <Route path="/services" element={<Services/>} /> 
+        <Route path="/terms-condition" element={<TermsCondition/>} /> 
+        <Route path="/privacy-policy" element={<PrivacyPolicy/>} /> 
       </Routes>
       <Footer />
     </>
