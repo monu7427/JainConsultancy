@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -8,14 +9,14 @@ const Footer = () => {
         <div className="flex flex-col items-center">
           <h2 className="text-xl font-semibold text-white mb-4">Jain Consultancy</h2>
           <div className="text-center mb-4">
-            <p className="text-slate-400">Sanghpura Purani tonk , Tonk Rajasthan 304001</p>
+            <p className="text-slate-400">Sanghpura Purani Tonk, Tonk Rajasthan 304001</p>
             <p className="text-slate-400">Phone: +91 9414646365</p>
             <p className="text-slate-400">Email: jain.consultancy92@gmail.com</p>
           </div>
           <p className="text-white text-center mb-4 max-w-prose">We are committed to providing our clients with the best quality services in the market.</p>
           <div className="flex space-x-4">
-            <a href="/privacy-policy" className="text-sky-500 hover:underline">Privacy Policy</a>
-            <a href="/terms-condition" className="text-sky-500 hover:underline">Terms of Service</a>
+            <NavLink to="/privacy-policy" className="text-sky-500 hover:underline">Privacy Policy</NavLink>
+            <NavLink to="/terms-condition" className="text-sky-500 hover:underline">Terms of Service</NavLink>
           </div>
         </div>
       </div>
