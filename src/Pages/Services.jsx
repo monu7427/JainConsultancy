@@ -5,17 +5,17 @@ const serviceData = [
   {
     icon: <FiFileText className="h-12 w-12 text-indigo-600" />,
     title: 'Income Tax Return Filing',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'Our experts ensure accurate and timely filing of your income tax returns, maximizing your tax benefits and minimizing any legal issues.',
   },
   {
     icon: <FiDollarSign className="h-12 w-12 text-indigo-600" />,
     title: 'GST Return',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'Stay compliant with GST regulations through our precise and efficient GST return filing services.',
   },
   {
     icon: <FiBriefcase className="h-12 w-12 text-indigo-600" />,
     title: 'Company Incorporation',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'We provide comprehensive assistance with all legal documentation and compliance requirements for smooth and hassle-free company incorporation.',
   },
 ];
 
@@ -36,7 +36,7 @@ const Services = () => {
           <div key={index} className="flex flex-col items-center justify-center space-y-4">
             {service.icon}
             <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
-            <p className="text-gray-600 px-5">{service.description}</p>
+            <p className="text-gray-600 px-5 text-center">{service.description}</p>
           </div>
         ))}
       </div>

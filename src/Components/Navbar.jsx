@@ -25,7 +25,7 @@ const Navbar = () => {
     <nav className="bg-sky-600 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-lg">
-          <h2 className="text-2xl">Jain Consultancy</h2>
+          <h2 className="text-sm md:text-2xl">Jain Consultancy</h2>
         </div>
         <div className="md:hidden flex items-center">
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -34,25 +34,27 @@ const Navbar = () => {
         </div>
         <ul
           ref={mobileMenuRef}
-          className={`md:flex space-x-4 ${isMobileMenuOpen ? 'block' : 'hidden'} md:block w-full md:w-auto`}
+          className={`md:flex space-y-4 md:space-y-0 md:space-x-4 ${
+            isMobileMenuOpen ? 'block' : 'hidden'
+          } md:block w-full md:w-auto`}
         >
-          <li>
+          <li className="text-center">
             <NavLink exact to="/" className="hover:underline block md:inline" activeClassName="font-bold">
               Home
             </NavLink>
           </li>
-          <li>
+          <li className="text-center">
             <NavLink to="/about" className="hover:underline block md:inline" activeClassName="font-bold">
               About Us
             </NavLink>
           </li>
-          <li>
+          <li className="text-center">
             <NavLink to="/services" className="hover:underline block md:inline" activeClassName="font-bold">
               Services
             </NavLink>
           </li>
           
-          <li>
+          <li className="text-center">
             <NavLink to="/contact" className="hover:underline block md:inline" activeClassName="font-bold">
               Contact Us
             </NavLink>

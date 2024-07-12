@@ -1,7 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MailIcon, PhoneIcon, LocationMarkerIcon } from '@heroicons/react/outline'; // Import icons from Heroicons
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    query: ''
+  });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    // For example, you could send the form data to a server
+    console.log(formData);
+    setIsSubmitted(true);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      query: ''
+    });
+  };
+
   return (
     <div className="bg-white py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
       <div className="max-w-3xl mx-auto text-center">
@@ -24,82 +55,97 @@ const ContactUs = () => {
             </li>
             <li className="py-2 flex items-center">
               <LocationMarkerIcon className="h-6 w-6 text-gray-600 mr-3" />
-              <span className="text-gray-700">Sanghpura Purani Tonk ,Tonk Rajasthan 304001 </span>
+              <span className="text-gray-700">Sanghpura Purani Tonk, Tonk, Rajasthan 304001</span>
             </li>
           </ul>
         </div>
       </div>
 
       <div className="mt-12">
-        <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
-          <div className="sm:col-span-2">
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-              Name
-            </label>
-            <div className="mt-1">
-              <input
-                type="text"
-                name="name"
-                id="name"
-                autoComplete="name"
-                className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-              />
+        <form onSubmit={handleSubmit}>
+          <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+            <div className="sm:col-span-2">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                Name
+              </label>
+              <div className="mt-1">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  autoComplete="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-2">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                Email
+              </label>
+              <div className="mt-1">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  autoComplete="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-2">
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                Phone Number
+              </label>
+              <div className="mt-1">
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  autoComplete="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-2">
+              <label htmlFor="query" className="block text-sm font-medium text-gray-700">
+                Query
+              </label>
+              <div className="mt-1">
+                <textarea
+                  id="query"
+                  name="query"
+                  rows="4"
+                  value={formData.query}
+                  onChange={handleChange}
+                  className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
+                ></textarea>
+              </div>
+            </div>
+
+            <div className="sm:col-span-2">
+              <button
+                type="submit"
+                className="w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Submit
+              </button>
             </div>
           </div>
-
-          <div className="sm:col-span-2">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-              Email
-            </label>
-            <div className="mt-1">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                autoComplete="email"
-                className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-              />
-            </div>
+        </form>
+        {isSubmitted && (
+          <div className="mt-8 text-center text-green-600">
+            Your query has been successfully sent!
           </div>
-
-          <div className="sm:col-span-2">
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-              Phone Number
-            </label>
-            <div className="mt-1">
-              <input
-                type="tel"
-                name="phone"
-                id="phone"
-                autoComplete="tel"
-                className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-              />
-            </div>
-          </div>
-
-          <div className="sm:col-span-2">
-            <label htmlFor="query" className="block text-sm font-medium text-gray-700">
-              Query
-            </label>
-            <div className="mt-1">
-              <textarea
-                id="query"
-                name="query"
-                rows="4"
-                className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
-              ></textarea>
-            </div>
-          </div>
-
-          <div className="sm:col-span-2">
-            <button
-              type="submit"
-              className="w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              Submit
-            </button>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );

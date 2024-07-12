@@ -5,6 +5,7 @@ const HeroSection = () => {
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
   const [query, setQuery] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleInputChange = (e, setState) => {
     setState(e.target.value);
@@ -19,6 +20,12 @@ const HeroSection = () => {
     setEmail('');
     setNumber('');
     setQuery('');
+    // Show success message
+    setIsSubmitted(true);
+    // Hide success message after 3 seconds
+    setTimeout(() => {
+      setIsSubmitted(false);
+    }, 3000);
   };
 
   return (
@@ -27,10 +34,10 @@ const HeroSection = () => {
         <h1 className="text-4xl font-bold mb-6">Welcome to Jain Consultancy</h1>
         <p className="text-lg mb-8">Explore our services and get in touch with us!</p>
         <form onSubmit={handleSubmit} className="flex flex-wrap justify-center">
-          <div className="w-full  md:w-1/2 md:p-2">
+          <div className="w-full md:w-1/2 md:p-2">
             <input
               type="text"
-              className="w-full  mt-2 p-2 rounded-md bg-white text-sky-600 focus:outline-none"
+              className="w-full mt-2 p-2 rounded-md bg-white text-sky-600 focus:outline-none"
               placeholder="Name"
               value={name}
               onChange={(e) => handleInputChange(e, setName)}
@@ -76,6 +83,11 @@ const HeroSection = () => {
             </button>
           </div>
         </form>
+        {isSubmitted && (
+          <div className="mt-4 text-green-500 text-lg">
+            Your query has been successfully submitted!
+          </div>
+        )}
       </div>
     </div>
   );
