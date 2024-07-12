@@ -22,7 +22,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-sky-600 text-white p-4">
+    <nav className="bg-sky-600 text-white p-4 sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-lg">
           <h2 className="text-sm md:text-2xl">Jain Consultancy</h2>
@@ -53,7 +53,6 @@ const Navbar = () => {
               Services
             </NavLink>
           </li>
-          
           <li className="text-center">
             <NavLink to="/contact" className="hover:underline block md:inline" activeClassName="font-bold">
               Contact Us
